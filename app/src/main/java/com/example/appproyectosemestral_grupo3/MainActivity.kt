@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.appproyectosemestral_grupo3.ui.theme.AppProyectoSemestral_Grupo3Theme
+import com.example.appproyectosemestral_grupo3.ui.theme.HomeScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,16 +20,11 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             AppProyectoSemestral_Grupo3Theme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                HomeScreen() //Se cambió el código setContent y la plantilla que viene por defecto (Greeting), en su lugar
+                //se llamó a la pantalla creada "HomeScreen"               }
             }
         }
     }
-}
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
@@ -44,4 +40,5 @@ fun GreetingPreview() {
     AppProyectoSemestral_Grupo3Theme {
         Greeting("Android")
     }
+}
 }
